@@ -1,0 +1,15 @@
+Installation instructions for TCdial
+
+Requirements
+--------------------------------------------------------------
+Soundcard with OSS or Alsa with OSS emulation.
+
+Installation
+--------------------------------------------------------------
+1) % tar -zxvf tcdial-1.0.tar.gz
+2) % cd tcdial-1.0
+3) % make
+4) copy 'dialer' somewhere in your $PATH like /usr/local/bin;
+5) % dialer
+
+TimeCop [timecop@japan.co.jp]

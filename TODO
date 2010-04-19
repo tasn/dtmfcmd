@@ -1,0 +1,29 @@
+== MAJOR ==
+
+* decide the big chunk's optimal size
+
+== MINOR ==
+
+* improve the play sound function
+
+* run with a profiler?
+
+* (main function) after errors should not exit before cleaning, fix that, and generally clean the code more.
+
+* rule checking should be a hash table?
+
+* maybe use the newer dsp.c? works better? should verify, check the differences the noob added.
+
+* change the ugly do_* names.
+
+== FUTURE IDEAS ==
+
+* make a seperate config package (moko-hack), this package should be the clean app
+
+* add suport for sample rates other than 8000?
+
+* add more special commands?
+
+* add volume config options. (i.e, write a volume altering app/script and use it)
+
+* drop glib and implement my own list (and make it as general as possible)
