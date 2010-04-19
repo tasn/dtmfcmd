@@ -1,10 +1,11 @@
 ADDED BY TAsn:
 This is used for dtmfcmd debugging, lanuch ./dialer c for terminal version and /dialer without any option for X11 version.
 You have to make a fifo (mkfifo) and set the fifo name in dial.c (constant).
-Then cat the content of the fifo to the stdin of dtmfcmd and don't forget setting the dtmfcmd options: -r "8000 1 8".
+Then cat the content of the fifo to the stdin of dtmfcmd and don't forget setting the dtmfcmd options: -r 8000 -c 1 -f U8.
 Those will tell the encoding of the data in the pipe.
 an example:
-$ ./dtmfcmd -s 8000 -r "8000 1 8" < ../generator/8bit.fifo
+$ ./dtmfcmd -r 8000 -c 1 -f U8 < ../generator/8bit.fifo
+It's a bit shaky (dtmfcmd with the generator), because the generator does not emit "white noise". In real life scenarios it works a lot better.
 
 Happy debugging.
 

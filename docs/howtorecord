@@ -2,7 +2,7 @@ Everything should use -D hw:0,0 (even aplay)!!!
 
 #record the other side of the gsm
 with call-recording.state (and minor adjustments)
-arecord -D hw:0,0 -f S16_LE -c 2 -t raw | dtmfcmd -s 8000 -r "8000 2 16"
+arecord -D hw:0,0 -f S16_LE -c 2 -t raw | dtmfcmd -r 8000 -c 2 -f S16_LE
 
 
 #record the mic
