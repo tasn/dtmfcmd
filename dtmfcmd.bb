@@ -1,5 +1,5 @@
 DESCRIPTION = "A dtmf remote control"
-HOMEPAGE = "http://www.binaryvision.co.il"
+HOMEPAGE = "http://www.binaryvision.org.il"
 SECTION = "system/applications"
 LICENSE = "GPLv2"
 SRCNAME = "dtmfcmd"
@@ -8,11 +8,10 @@ DEPENDS += " glib"
 PV = "0.4.1"
 PR = "r0"
 
-S = "${WORKDIR}/trunk"
+S = "${WORKDIR}/${PN}"
 inherit autotools 
 
-#SRC_URI = "svn:///home/tom/projects/svn/dtmfcmd;module=./trunk;proto=file"
-SRC_URI = "file://../trunk"
+SRC_URI = "file://../${PN}"
 FILES_${PN} += "${datadir} ${sysconfdir}"
 
 
