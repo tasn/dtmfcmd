@@ -1,0 +1,28 @@
+Everything should use -D hw:0,0 (even aplay)!!!
+
+#record the other side of the gsm
+with call-recording.state (and minor adjustments)
+arecord -D hw:0,0 -f S16_LE -c 2 -t raw | dtmfcmd -s 8000 -r "8000 2 16"
+
+
+#record the mic
+alsactl -f voip-handset.state restore
+arecord -D hw:0,0 -f S16_LE -c 2 tmp.wav
+
+also aplay should be with the -D hw:0,0
+
+#re enable voice from mic
+amixer sset 'Mono Mixer Sidetone Playback Sw' on
+
+
+only diff is the scenario...
+
+Changing the scenario upon call:
+
+<mrmoku> TAsn: rules.yaml... it is done by a rule
+* Sharwin_F (n=Sharwin_@90.163.55.85) has joined #openmoko-cdevel
+<mrmoku>     while: CallStatus()
+<mrmoku>     filters: Or(HasAttr(status, "outgoing"), HasAttr(status, "active"))
+<mrmoku>     actions:
+<mrmoku>             - SetScenario(gsmhandset)
+<mrmoku>             - OccupyResource(CPU)
