@@ -264,7 +264,7 @@ main(int argc, char *argv[])
 		do_optimize(smp, samples, optimize_options);
 		
 
-		/* INIT dtmf detection and detect */		ast_digit_detect_init(&dtmf, 0);
+		/* INIT dtmf detection and detect */		ast_digit_detect_init(&dtmf, 0);
 		dtmf_detect(&dtmf, smp, samples, DSP_DIGITMODE_NOQUELCH);
 
 		for (i = 0; i<dtmf.detected_digits && run_loop; i++) {
